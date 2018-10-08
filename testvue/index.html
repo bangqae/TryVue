@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>TryVue</title>
+</head>
+<body>
+  <div id="app">
+    {{ nama }} - {{ umur }}
+  <span v-html="raw"></span>
+
+  </div>
+
+
+
+  <script src="vue2.5.17.min.js"></script>
+  <!-- gak blh ada src -->
+  <script>
+    var vo = new Vue({
+      el   :'#app',
+      data : {
+        nama   : "hihi",
+        umur   : 20,
+        raw    : '<div> masuk pak eko </div>'
+      },
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <link rel="stylesheet" href="">
+</head>
+<body>
+  <div id="app">
+    {{ nama }} - {{ umur }}
+    {{{raw}}}
+  </div>
+
+
+
+  <script src="vue2.5.17.min.js"></script>
+  <!-- gak blh ada src -->
+  <script>
+    var vo = new Vue({
+      el   :'#app',
+      data : {
+        nama   : "hihi",
+        umur   : 20,
+        raw    : '<p> masuk pak eko </p>'
+      },
+    });
+  </script>
+</body>
+</html>

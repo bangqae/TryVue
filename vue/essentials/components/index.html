@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Vue App</title>
+  <script src="../vue2.5.17.min.js"></script>
+  <!-- <script src="https://unpkg.com/vue"></script> -->
+  <link rel="stylesheet" href="http://davidtkatz.com/public_css/vue.css">
+</head>
+<body>
+  <div id="app">
+    <ctr v-bind:add-num="5"></ctr><!-- diubah ke 5 -->
+  </div>
+
+  <script type="text/x-template" id="gg">
+    <div>
+      <div> Count: {{this.count}} </div>
+      <button class="vue-btn" @click="increment"> Increment by {{this.addNum}} </button>
+    </div>
+  </script>
+
+  <script>
+    var counter = Vue.component('ctr', {
+      template:'#gg'//panggil template
+      ,
+      props: {
+        addNum: {
+          type: Number,//tipe data
+          default:1//nilai default
+        }
+      },
+      data() {
+        return {
+          count: 0//data
+        }
+      },
+      methods: {
+        increment() {
+          this.count+= this.addNum//statement
+        }
+      }
+    })
+
+    var app = new Vue({
+      el: '#app',
+      componet: {
+        counter //memanggil komponen counter
+      }
+    })
+  </script>
+</body>
+</html>
